@@ -42,7 +42,7 @@ namespace lab16zavd3
             {
                 new Slow("Wifi","Вайфай"),
                 new Slow("CPU","Центральний процессор"),
-                new Slow("GPU","Графічний  процессор"),
+                new Slow("GPU","Графічний  процессор")
             };
 
             bool flag = true;
@@ -63,7 +63,11 @@ namespace lab16zavd3
                         Console.WriteLine("1 - Ввести  2- Вихід");
                         e = Convert.ToInt32(Console.ReadLine());
                         Console.Clear();
-                        if (e == 1) new Slow(true);
+                        if (e == 1)
+                        {
+                            Array.Resize(ref arr, arr.Length + 1);
+                            arr[arr.Length - 1] = new Slow(true);
+                        }
                         if (e == 2) b = false;
                     }
                     
